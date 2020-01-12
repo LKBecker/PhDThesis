@@ -42,7 +42,7 @@ rsconnect/
 *.o*
 C#/DICAMExportFolderizer
 C#/DICOMExporter
-C#/SeriesFolderizer
+C#/SeriesFolderiser
 C#/SigmaPlotRipper
 Java/
 Perl/
