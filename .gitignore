@@ -36,8 +36,8 @@ rsconnect/
 *.emf
 *.jpg
 *.png
-*.e*
-*.o*
+bash/*.e*
+bash/*.o*
 C#/DICAMExportFolderizer
 C#/DICOMExporter
 C#/SeriesFolderiser
