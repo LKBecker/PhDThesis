@@ -74,3 +74,5 @@ R/LKB_PhD_ReCode/Data/*
 *.ris
 *.gmt
 *.nbib
+Python/*.txt
+bash/*.txt
