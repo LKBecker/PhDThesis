@@ -1,0 +1,55 @@
+# History files
+.Rhistory
+.Rapp.history
+# Session Data files
+.RData
+# Example code in package build process
+*-Ex.R
+# Output files from R CMD build
+/*.tar.gz
+# Output files from R CMD check
+/*.Rcheck/
+# RStudio files
+.Rproj.user/
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
+rsconnect/
+# Count data from htseq-count
+*.counts
+# R binary object files (tend to be big chunky boys)
+*.rds
+.Rproj.user
+/*.txt
+/*.tsv
+Data/*/
+Graphs/*
+Code/Eales/*
+/Code/Desktop/Auxiliary/5-LeafCutterPlotRedo.txt
+/Code/Desktop/leafcutter_Hack/juncs
+/Code/Desktop/leafcutter_Hack/leafcutter_cluster/bin/Release/netcoreapp2.1/publish
+/Code/Desktop/leafcutter_Hack/leafcutter_cluster/bin
+/Code/Desktop/leafcutter_Hack/leafcutter_cluster/obj
+/Code/Desktop/leafcutter_Hack/.vs/leafcutter_cluster/v15
+/Code/Desktop/leafcutter_Hack/.vs/leafcutter_clustering/v15/Server/sqlite3
+/Code/Desktop/leafcutter_Hack/dotnet190130.vsp
+/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130.vsp
+/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130(1).vsp
+*.RData
+*.bed
+*.docx
+*.xlsx
+*.emf
+*.jpg
+*.png
+*.e*
+*.o*
