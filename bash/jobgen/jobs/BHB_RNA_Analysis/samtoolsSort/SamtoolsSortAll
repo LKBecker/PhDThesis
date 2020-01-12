@@ -1,0 +1,4 @@
+cd ~/scratch/
+INFILE=`awk 'BEGIN { FS="." }; NR=='"$SGE_TASK_ID"' {print $1}' UnsortedSAMFiles.txt`
+samtools sort $INFILE.sam -o .$INFILE.sorted.sam
+

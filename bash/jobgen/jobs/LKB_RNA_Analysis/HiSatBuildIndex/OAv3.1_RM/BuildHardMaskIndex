@@ -1,0 +1,2 @@
+cd ~/rds-dibbs-sparks/RefGenomes/OvisAries/OAv3.1/
+~/PhD/tools/hisat/hisat2-build -f Ovis_aries.Oar_v3.1.dna_rm.toplevel.fa OvsArs-v31-RM

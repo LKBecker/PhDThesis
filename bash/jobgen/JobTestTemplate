@@ -1,0 +1,9 @@
+cd ~/rds-dibbs-sparks/LKB_RNA/OAv3.1BAMs/
+nLines=$(wc -l < OAv3.1BAMs.txt)
+#NSLOTS=0
+#echo "module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2"
+for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+do
+	INFILE=$(awk 'NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' OAv3.1BAMs.txt)
+	echo $INFILE
+done

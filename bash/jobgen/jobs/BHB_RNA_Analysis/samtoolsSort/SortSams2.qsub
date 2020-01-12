@@ -1,0 +1,11 @@
+#$ -t 3-24
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N SortAlignedSAMs
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+#$ -l 's_rt=00:35:00'
+cd ~/scratch/
+INFILE=`awk 'BEGIN { FS="." }; NR=='"$SGE_TASK_ID"' {print $1}' UnsortedSAMFiles.txt`
+samtools sort $INFILE.sam -o $INFILE.sorted.sam

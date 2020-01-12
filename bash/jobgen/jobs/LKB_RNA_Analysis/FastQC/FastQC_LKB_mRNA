@@ -1,0 +1,3 @@
+module load apps/fastqc/0.11.3/noarch
+cd ~/PhD/LKB_RNA/mRNA_gz/
+find . -name "*.fastq.gz" -exec fastqc '{}' ';'

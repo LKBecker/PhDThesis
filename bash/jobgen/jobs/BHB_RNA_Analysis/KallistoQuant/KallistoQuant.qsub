@@ -1,0 +1,14 @@
+#$ -pe smp.pe 8
+#$ -S /bin/bash
+#$ -V
+#$ -cwd
+#$ -l 's_rt=03:45:00'
+#$ -N RNAQntPwrNlys
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m bae
+#$ -t 2-38
+INFILE=`awk "NR==$SGE_TASK_ID" KallistoQuantTargets.txt`
+FOLDER=~/PhD/BHB_RNA/AllQuant/BatchQuant-$SGE_TASK_ID
+mkdir -p $FOLDER
+cd ~/PhD/tools/Kallisto/
+./kallisto quant --index="OvisAries.idx" -t 8 ~/PhD/BHB_RNA/${INFILE}_1.fastq.gz ~/PhD/BHB_RNA/${INFILE}_2.fastq.gz -o $FOLDER

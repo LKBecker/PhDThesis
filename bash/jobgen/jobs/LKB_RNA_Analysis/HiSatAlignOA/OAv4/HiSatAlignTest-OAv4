@@ -1,0 +1,11 @@
+nLines=$(wc -l < bundled.txt)
+NSLOTS=4
+for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+do
+	OUTFILE=$(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' {print "Sample"$1"_"$2} END {print ""}' bundled.txt)
+	#cd ~/PhD/BHB_RNA/
+	echo "~/PhD/tools/hisat/hisat2 -q --threads "$NSLOTS" -x ~/PhD/RefGenomes/OvisAries/hisat/OvsArs-v4 -1 $(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' {print ($3"_1.fastq.gz," $4"_1.fastq.gz," $5"_1.fastq.gz")" -2 "($3"_2.fastq.gz," $4"_2.fastq.gz," $5"_2.fastq.gz") } END {print ""}' bundled.txt) > ${OUTFILE}_OAv4_aligned.sam"
+	echo "samtools view -hu ${OUTFILE}_OAv4_aligned.sam | samtools sort -n -@ $NSLOTS -o ${OUTFILE}_OAv4_aligned.bam"
+	echo "rm ${OUTFILE}_OAv4_aligned.sam"
+done
+

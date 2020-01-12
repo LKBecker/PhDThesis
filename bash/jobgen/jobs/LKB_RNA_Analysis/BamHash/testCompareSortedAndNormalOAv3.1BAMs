@@ -1,0 +1,13 @@
+cd ~/rds-dibbs-sparks/LKB_RNA/OAv3.1BAMs/
+nLines=$(wc -l < OAv3.1BAMs.txt)
+for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+do
+	INFILE=$(awk 'NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' OAv3.1BAMs.txt)
+	if [ -e ${INFILE}.bam ]; then
+		echo "RESULT1=$(~/PhD/tools/BamHash/bamhash_checksum_bam ${INFILE}.bam)"
+		echo "RESULT2=$(~/PhD/tools/BamHash/bamhash_checksum_bam ${INFILE}.sorted.bam)"
+		echo "printf \"File\tHash\n%s\t%s\n%s\t%s\n\" \"$INFILE.bam\" \"$RESULT1\" \"$INFILE.sorted.bam\" \"$RESULT2\""
+	else 
+		exit 1
+	fi
+done

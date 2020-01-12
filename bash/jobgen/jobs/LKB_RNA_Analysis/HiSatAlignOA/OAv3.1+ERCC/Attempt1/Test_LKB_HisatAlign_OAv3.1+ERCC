@@ -1,0 +1,21 @@
+cd ~/PhD/LKB_RNA/mRNA_gz/
+nLines=$(wc -l < 2017-04-25_AllRNAFiles-GroupedPerSample.txt)
+NSLOTS=8
+echo "module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2"
+
+if [ -e ~/PhD/RefGenomes/OvisAries/hisat/OvsArs-v31+ERCC.1.ht2 ]
+then 
+	echo "hisat index with ERCC found"
+else
+	exit 0
+fi
+
+#for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+for ((SGE_TASK_ID=1; SGE_TASK_ID<2; SGE_TASK_ID++))
+do
+  OUTFILE=$(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' 2017-04-25_AllRNAFiles-GroupedPerSample.txt)
+  echo "~/PhD/tools/hisat/hisat2 -q --threads "$NSLOTS" -x ~/PhD/RefGenomes/OvisAries/hisat/OvsArs-v31+ERCC -1 $(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' {print ($2"_1.fastq.gz," $3"_1.fastq.gz," $4"_1.fastq.gz")" -2 "($2"_2.fastq.gz,"  $3"_2.fastq.gz," $4"_2.fastq.gz") } END {print ""}' 2017-04-25_AllRNAFiles-GroupedPerSample.txt) > ~/scratch/LKB/${OUTFILE}_OAv3.1+ERCC_aligned.sam"
+  echo "samtools view -hu ~/scratch/LKB/${OUTFILE}_OAv3.1+ERCC_aligned.sam | samtools sort -n -@ $NSLOTS -o ~/scratch/LKB/${OUTFILE}_OAv3.1+ERCC_aligned.bam"
+  echo "rm ~/scratch/LKB/${OUTFILE}_OAv3.1+ERCC_aligned.sam"
+done
+

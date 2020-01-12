@@ -1,0 +1,7 @@
+SGE_TASK_MAX=$(wc -l < ~/scratch/SortedSamfiles.OAv3.1.txt)
+for ((SGE_TASK_ID=1; SGE_TASK_ID <= SGE_TASK_MAX; SGE_TASK_ID++)); do
+	INFILE=$(awk 'BEGIN { FS="."; } NR=='"$SGE_TASK_ID"' { print $1; }' ~/scratch/SortedSamfiles.OAv3.1.txt)
+	echo "samtools view $INFILE.bam | htseq-count --mode=union --stranded=no ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_Union.counts"
+	echo "samtools view $INFILE.bam | htseq-count --mode=intersection-strict --stranded=no ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_IntrsctStrict.counts"
+	echo "samtools view $INFILE.bam | htseq-count --mode=intersection-nonempty--stranded=no ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_IntrsctNonempty.counts"
+done

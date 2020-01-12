@@ -1,0 +1,87 @@
+#!/bin/bash
+function usage {
+	cat <<- USAGE
+		  jobgenPBS 
+		    -s|--script Path/To/File               Script to be executed by the batch job
+		    -n|--name jobname                      Name of your job
+		    -c|--cores <n>                         Number of cores requested
+		    -m|--mode serial/parallel              Run mode of your job
+		    -e|--email example@manchester.ac.uk    Address any mail is sent to
+		    -t|--time "hh:mm:ss"                   Expected runtime of job
+	USAGE
+	exit 1
+}
+
+function write_script {
+	cat <<- _EOF_
+	#PBS -N $STDNAME
+	#PBS -q $STDMODE
+	#PBS -l nodes=$STDNODES
+	#PBS -l cput=$STDTIME
+	#PBS -m bea
+	#PBS -M $STDMAIL
+	cd \$PBS_O_WORKDIR
+	$(get_script_context)
+	_EOF_
+}
+
+function get_script_context {
+	if [ -z "$STDSCRIPT" ]; then
+		(echo "No target script has been designated. Generating default dummy file..." >2)
+		echo "exit 0"
+	else
+		test -f "$STDSCRIPT"
+		cat $STDSCRIPT
+	fi
+}
+
+function ts { date +"%Y%m%d-%H%M"; }
+function make_filename {
+    FILENAME="${STDNAME}_$(ts)" #$(whoami)_
+}
+
+# ----
+
+if [ $# -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+STDNAME="autogen"
+STDNODES=4
+STDMODE="serial"
+STDMAIL="lorenz.becker@postgrad.manchester.ac.uk"
+STDTIME="01:00:00"
+STDSCRIPT=
+
+while [ "$1" != "" ]; do
+	case $1 in
+		-n | --name )	shift
+						STDNAME=$1
+						;;
+        -c | --cores )	shift
+						STDNODES=$1
+						;;
+        -m | --mode )	shift
+						STDMODE=$1
+						;;
+        -e | --email )	shift
+						STDMAIL=$1
+						;;
+        -t | --time )	shift
+						STDTIME=$1
+						;;
+        -s | --script )	shift
+						STDSCRIPT=$1
+						;;
+        * )				usage
+						exit 1
+    esac
+    shift
+done
+
+if [ ! -d "./BatchJobs" ]; then
+  mkdir BatchJobs
+fi
+make_filename
+write_script > ~/PhD/tools/jobgen/jobs/$FILENAME.qsub

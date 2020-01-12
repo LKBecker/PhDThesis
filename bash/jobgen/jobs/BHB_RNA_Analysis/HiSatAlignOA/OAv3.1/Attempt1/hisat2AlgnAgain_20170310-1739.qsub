@@ -1,0 +1,11 @@
+#$ -pe smp.pe 4
+#$ -t 1-24
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N hisat2AlgnAndSort
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m bae
+cd ~/PhD/BHB_RNA/
+OUTFILE=$(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' {print "Sample"$1"_"$2} END {print ""}' bundled.txt)
+~/PhD/tools/hisat/hisat2 -q -x OvsArs -1 $(awk 'BEGIN {FS="[;\t]"} NR=='"$SGE_TASK_ID"' { print $3"_1.fastq.gz," $4"_1.fastq.gz," $5"_1.fastq.gz -2 " $3 "_2.fastq.gz," $4 "_2.fastq.gz," $5 "_2.fastq.gz | samtools sort -n -@ '"$NSLOTS"' -O bam -o '"$OUTFILE"'" }; END {print ""}' bundled.txt)

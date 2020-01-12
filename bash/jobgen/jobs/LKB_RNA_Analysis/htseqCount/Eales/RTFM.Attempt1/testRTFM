@@ -1,0 +1,14 @@
+cd ~/rds-dibbs-sparks/LKB_RNA/OAv3.1BAMs/
+nLines=$(wc -l < OAv3.1BAMs.txt)
+#NSLOTS=0
+echo "module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2"
+echo "module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2"
+for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+do
+	INFILE=$(awk 'NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' OAv3.1BAMs.txt)
+	if [ -e ${INFILE}.bam ]; then
+		echo "samtools view ${INFILE}.bam | htseq-count -f bam -r pos -s yes -m union - /mnt/mhs01-home01/bk01-icvs/dibb_sparks/mqbprlb2/RefGenomes/OvisAries/OAv3.1/2017-05-29_EalesTranscriptomePrunedOfUnstranded.gtf > ${INFILE}_EalesTrm_RTFM-Pos_Union_stranded.counts"
+	else 
+		exit 1
+	fi
+done

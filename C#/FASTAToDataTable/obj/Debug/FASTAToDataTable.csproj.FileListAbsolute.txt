@@ -1,0 +1,25 @@
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe.config
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\bin\Debug\FASTAToDataTable.pdb
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\obj\Debug\FASTAToDataTable.csprojResolveAssemblyReference.cache
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\obj\Debug\FASTAToDataTable.exe
+H:\Data\Projects\GTFParser\FASTAToDataTable\FASTAToDataTable\obj\Debug\FASTAToDataTable.pdb
+H:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe.config
+H:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.exe
+H:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.pdb
+H:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe
+H:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.pdb
+H:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.csprojResolveAssemblyReference.cache
+F:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe.config
+F:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe
+F:\Data\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.pdb
+F:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.csprojResolveAssemblyReference.cache
+F:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.exe
+F:\Data\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.pdb
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe.config
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Debug\FASTAToDataTable.pdb
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Debug\Mono.CSharp.dll
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.csprojResolveAssemblyReference.cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Debug\FASTAToDataTable.pdb

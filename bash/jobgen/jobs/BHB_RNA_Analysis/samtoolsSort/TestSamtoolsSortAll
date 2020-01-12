@@ -1,0 +1,12 @@
+cd ~/scratch/
+
+if [ ! -d "SortedSAM" ]; then
+	mkdir SortedSAM
+fi
+nLines=`wc -l < UnsortedSAMFiles.txt`
+echo $nLines
+for ((SGE_TASK_ID=1; SGE_TASK_ID<=nLines; SGE_TASK_ID++))
+do
+	INFILE=`awk 'BEGIN { FS="." }; NR=='"$SGE_TASK_ID"' {print $1}' UnsortedSAMFiles.txt`
+	echo "samtools sort $INFILE.sam -o $INFILE.sorted.sam"
+done

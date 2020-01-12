@@ -1,0 +1,7 @@
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N HisatRebuild_OAv3.1_Index
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+~/PhD/tools/hisat/hisat2-build -f ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.dna.toplevel.fa OvsArs-v31

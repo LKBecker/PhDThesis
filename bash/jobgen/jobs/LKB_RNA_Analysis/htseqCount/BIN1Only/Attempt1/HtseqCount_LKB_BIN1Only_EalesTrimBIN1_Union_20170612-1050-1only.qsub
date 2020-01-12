@@ -1,0 +1,12 @@
+#$ -t 1-1
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N htsqCntLB_B1OA_B1ElsTrm
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m n
+module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2
+module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2
+cd ~/rds-dibbs-sparks/LKB_RNA/OAv3.1BAMs/BIN1Only/
+INFILE=$(awk 'NR=='"$SGE_TASK_ID"' { print $1; }' BIN1Files.txt)
+samtools view ${INFILE}.bam | htseq-count --mode=union - /mnt/mhs01-home01/bk01-icvs/dibb_sparks/mqbprlb2/RefGenomes/OvisAries/OAv3.1/20170612-103558_EalesOATranscriptome_BIN1Only.gtf > ${INFILE}_ETrimmBIN1_Union_stranded.counts

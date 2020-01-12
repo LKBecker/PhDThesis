@@ -1,0 +1,12 @@
+#$ -t 1-24
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N IntersectDamnit
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2
+module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2
+cd ~/scratch
+INFILE=$(awk 'BEGIN { FS="."; } NR=='"$SGE_TASK_ID"' { print $1; }' SortedSamfiles.txt)
+samtools view $INFILE.bam | htseq-count --mode=intersection-strict --stranded=no - ~/PhD/RefGenomes/OvisAries/raw-transcriptome.gtf > ~/PhD/${INFILE}_Strict.counts

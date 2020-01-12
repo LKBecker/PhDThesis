@@ -1,0 +1,14 @@
+#$ -t 1-30
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N htseqCount_LKB_Eales_Eales_All
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2
+module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2
+cd ~/scratch/LKB/
+INFILE=$(awk 'NR=='"$SGE_TASK_ID"' { print $1; }' SortedSamfiles.Eales.txt)
+samtools view ${INFILE}.bam | htseq-count --stranded=no --mode=union - ~/PhD/RefGenomes/OvisAries/JamesEalesOATranscriptome.gtf > ${INFILE}_Eales_Union_stranded.counts
+samtools view ${INFILE}.bam | htseq-count --stranded=no --mode=intersection-strict - ~/PhD/RefGenomes/OvisAries/JamesEalesOATranscriptome.gtf > ${INFILE}_Eales_IntrsctStrict_stranded.counts
+samtools view ${INFILE}.bam | htseq-count --stranded=no --mode=intersection-nonempty - ~/PhD/RefGenomes/OvisAries/JamesEalesOATranscriptome.gtf > ${INFILE}_Eales_IntrsctNonempty_stranded.counts

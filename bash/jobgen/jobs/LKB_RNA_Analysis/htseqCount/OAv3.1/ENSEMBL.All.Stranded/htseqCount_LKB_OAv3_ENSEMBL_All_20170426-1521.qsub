@@ -1,0 +1,14 @@
+#$ -t 1-30
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N htseqCount_LKB_OAv3_ENSEMBL_All
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2
+module load apps/samtools/1.3.1/gcc-4.8.5+htslib-1.3.2
+cd ~/scratch/LKB/
+INFILE=$(awk 'NR=='"$SGE_TASK_ID"' { print $1; }' SortedSamfiles.OAv3.1.txt)
+samtools view ${INFILE}.bam | htseq-count --mode=union - ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_Union_stranded.counts
+samtools view ${INFILE}.bam | htseq-count --mode=intersection-strict - ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_IntrsctStrict_stranded.counts
+samtools view ${INFILE}.bam | htseq-count --mode=intersection-nonempty - ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.88.gtf > ${INFILE}_ENSEMBL_IntrsctNonempty_stranded.counts

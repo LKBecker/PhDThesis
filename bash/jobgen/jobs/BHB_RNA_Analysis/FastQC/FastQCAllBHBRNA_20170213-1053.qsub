@@ -1,0 +1,7 @@
+#$ -S /bin/bash
+#$ -V
+#$ -l 's_rt=00:45:00'
+#$ -N FastQCAllBHBRNA
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ae
+find . -name "*.fastq.gz" -exec fastqc '{}' ';'

@@ -1,0 +1,7 @@
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Release\FASTAToDataTable.exe.config
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Release\FASTAToDataTable.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Release\FASTAToDataTable.pdb
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\bin\Release\Mono.CSharp.dll
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Release\FASTAToDataTable.csprojResolveAssemblyReference.cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Release\FASTAToDataTable.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FASTAToDataTable\obj\Release\FASTAToDataTable.pdb

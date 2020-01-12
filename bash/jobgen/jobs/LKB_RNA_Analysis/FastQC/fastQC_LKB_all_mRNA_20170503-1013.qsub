@@ -1,0 +1,12 @@
+#$ -S /bin/bash
+#$ -V
+#$ -N FastQC_LKB_mRNA
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ae
+module load apps/fastqc/0.11.3/noarch
+
+cd ~/PhD/LKB_RNA/mRNA_gz/
+find -name "*.fastq.gz" -exec fastqc '{}' ';'
+
+cd ~/PhD/LKB_RNA/miRNA_gz/
+find -name "*.fastq.gz" -exec fastqc '{}' ';'

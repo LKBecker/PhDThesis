@@ -1,0 +1,8 @@
+#$ -l 's_rt=02:00:00'
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N Build-OAv3.1+ERCC-Index
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+~/PhD/tools/hisat/hisat2-build -f ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.dna.PLUS.ERCC92.fa OvsArs-v31+ERCC

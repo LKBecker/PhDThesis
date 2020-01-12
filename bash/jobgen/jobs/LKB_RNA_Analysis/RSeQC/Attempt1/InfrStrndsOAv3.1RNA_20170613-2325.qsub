@@ -1,0 +1,13 @@
+#$ -t 1-30
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N InfrStrndsOAv3.1RNA
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ea
+module load libs/numpy/1.9.2/gcc-4.8.5+atlas-3.10.3+python-2.7.8
+cd ~/scratch/LKB
+
+INFILE=$(awk 'NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' OAv3.1BAMs-v4.txt)
+PyResult=$(python /mnt/iusers01/bk01-icvs/mqbprlb2/gridware/share/python/2.7.8/bin/infer_experiment.py -i $INFILE.bam -r ~/rds-dibbs-sparks/RefGenomes/OvisAries/OAv3.1/EalesPruned.bed)
+echo -e "FILE:\t$INFILE.bam $PyResult\n----\n" >> BAMStrandInfer.txt

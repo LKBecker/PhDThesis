@@ -1,0 +1,15 @@
+#$ -cwd
+#$ -pe smp.pe 8
+#$ -S /bin/bash
+#$ -V
+#$ -l 's_rt=02:00:00'
+#$ -N KallistoQuantBHBforScotty
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m bae
+#$ -t 1-6
+INFILE=`awk "NR==$SGE_TASK_ID" 2017-02-22_KallistoQuantTargets.txt`
+cd ~/PhD/tools/Kallisto
+FOLDER=~/PhD/BHB_RNA/BatchQuant-$SGE_TASK_ID
+mkdir $FOLDER
+./kallisto quant --index="OvisAries.idx" -t 8 ~/PhD/BHB_RNA/170124_K00198_0157_BHHFKJBBXX/$INFILE_1.fastq.gz ~/PhD/BHB_RNA/170124_K00198_0157_BHHFKJBBXX/$INFILE_2.fastq.gz -o $FOLDER
+#TURNS OUT THOSE DOUBLE QUOTES ARE REALLY IMPORTANT TO AWK

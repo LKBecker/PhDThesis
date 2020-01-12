@@ -1,0 +1,7 @@
+#$ -S /bin/bash
+#$ -V
+#$ -l 's_rt=00:59:00'
+#$ -N BuildOvisAriesIndex
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m ae
+~/PhD/tools/Kallisto/kallisto index -i ~/PhD/tools/Kallisto/OAv3.1-ENSEMBL.cDNA.idx ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.cdna.all.fa.gz

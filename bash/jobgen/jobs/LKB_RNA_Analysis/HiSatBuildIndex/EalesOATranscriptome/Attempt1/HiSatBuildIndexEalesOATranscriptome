@@ -1,0 +1,1 @@
+~/PhD/tools/hisat/hisat2-build -f ~/PhD/RefGenomes/OvisAries/OvisAriesTranscriptome.fasta OvsArs-Eales-Trnscrptme

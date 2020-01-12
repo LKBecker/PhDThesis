@@ -1,0 +1,108 @@
+#!/bin/bash
+
+function usage {
+	cat <<- USAGE
+		  jobgenSGE - creates Sun Grid Engine-style files for use with qsub 
+		    -s|--script Path/To/File                          Script to be executed by the batch job
+		    -n|--jobname jobname                              Name of your job
+		    -ct|--coretype short|sandybridge|westmere|highmem Specific node type to be used (if not specified, SGE assigns)
+		    -nc|--cores 8                                     Number of cores to use
+				-m|--mailif b/a/e/s/n                             Mail sent at beginning/aborted/end/suspended/none (combine freely)
+		    -e|--email example@manchester.ac.uk,example2@g.co Address mail is sent to. Separate multiple addresses with commas.
+		    -t|--time "hh:mm:ss"                              Expected runtime of job (software will receive a soft kill signal at the end!)
+		    -a| --array <m-n>                                   Specify an array of m to n jobs (use $SGE_JOB_ID to access current number, doesn't have to start at 1)
+	USAGE
+	exit 1
+}
+
+function write_script {
+	if [ ! -z "$STDNODE" ]; then
+		echo "#$ -l $STDNODE"
+	fi
+	
+	if [ ! -z "$STDCORES" ]; then
+		echo "#$ -pe smp.pe $STDCORES"
+	fi
+
+	if [ ! -z "$STDTIME" ]; then
+		echo "#$ -l 's_rt=$STDTIME'"
+	fi	
+	
+	if [ ! -z "$JOBARRAY" ]; then
+		echo "#$ -t $JOBARRAY"
+	fi
+
+	cat <<- _EOF_
+		#$ -S /bin/bash
+		#$ -cwd
+		#$ -V
+		#$ -N $STDNAME
+		#$ -M $STDMAIL
+		#$ -m $MAILFLAGS
+		$(get_script_context)
+	_EOF_
+}
+
+function get_script_context {
+	if [ -z "$STDSCRIPT" ]; then
+		(echo "No target script has been designated. Generating dummy file..." >2)
+		echo "exit 0"
+	else
+		test -f "$STDSCRIPT"
+		cat $STDSCRIPT
+	fi
+}
+
+function ts { date +"%Y%m%d-%H%M"; }
+
+function make_filename { 
+	FILENAME="${STDNAME}_$(ts)"
+}
+
+# --------
+
+if [ $# -lt 1 ]; then
+	usage
+fi
+
+STDNAME="autogen"
+STDMAIL="lorenz.becker@postgrad.manchester.ac.uk"
+MAILFLAGS="ea"
+STDCORES=
+STDNODE=
+STDSCRIPT=
+JOBARRAY=
+STDTIME=
+while [ "$1" != "" ]; do
+	case $1 in
+		-n | --jobname )	shift
+							STDNAME=$1
+							;;
+		-ct | --coretype )	shift
+							STDNODE=$1
+							;;
+		-nc| --cores )		shift
+							STDCORES=$1
+							;;
+		-m | --mailif )		shift
+							MAILFLAGS=$1
+							;;
+		-e | --email )		shift
+							STDMAIL=$1
+							;;										
+		-t | --time )		shift
+							STDTIME=$1
+							;;
+		-s | --script )		shift
+							STDSCRIPT=$1
+							;;
+		-a | --array )		shift
+							JOBARRAY=$1
+							;;
+		* )					usage
+	esac
+    shift
+done
+
+make_filename
+write_script > $FILENAME.qsub

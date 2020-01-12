@@ -1,0 +1,7 @@
+cd ~/rds-dibbs-sparks/LKB_RNA/OAv3.1BAMs/
+INFILE=$(awk 'NR=='"$SGE_TASK_ID"' {print $1} END {print ""}' OAv3.1BAMs.txt)
+if [ -e $INFILE.bam ]; then
+	~/PhD/tools/BamHash/bamhash_checksum_bam ${INFILE}.bam ${INFILE}.sorted.bam
+else
+	exit 1;
+fi

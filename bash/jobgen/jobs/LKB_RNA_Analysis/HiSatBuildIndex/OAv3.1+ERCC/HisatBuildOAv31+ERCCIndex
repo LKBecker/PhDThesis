@@ -1,0 +1,1 @@
+~/PhD/tools/hisat/hisat2-build -f ~/PhD/RefGenomes/OvisAries/Ovis_aries.Oar_v3.1.dna.PLUS.ERCC.fa OvsArs-v31+ERCC

@@ -1,0 +1,90 @@
+File	Hash
+Sample-161207-07_AD_OAv3.1_aligned.bam	66fb86c87ef679fd	102583070
+Sample-161207-07_AD_OAv3.1_aligned.sorted.bam	66fb86c87ef679fd	102583070
+File	Hash
+Sample-161207-08_3M_OAv3.1_aligned.bam	2c811ca6dbfd0617	100361210
+Sample-161207-08_3M_OAv3.1_aligned.sorted.bam	2c811ca6dbfd0617	100361210
+File	Hash
+Sample-161207-09_3M_OAv3.1_aligned.bam	1d652c4874fd88c7	94191640
+Sample-161207-09_3M_OAv3.1_aligned.sorted.bam	1d652c4874fd88c7	94191640
+File	Hash
+Sample-161207-10_AD_OAv3.1_aligned.bam	e6ee022690cc9058	93803278
+Sample-161207-10_AD_OAv3.1_aligned.sorted.bam	e6ee022690cc9058	93803278
+File	Hash
+Sample-161208-01_1W_OAv3.1_aligned.bam	e506406d5ccd60a3	96641678
+Sample-161208-01_1W_OAv3.1_aligned.sorted.bam	e506406d5ccd60a3	96641678
+File	Hash
+Sample-161208-02_1W_OAv3.1_aligned.bam	f42cccddae8acc85	97234996
+Sample-161208-02_1W_OAv3.1_aligned.sorted.bam	f42cccddae8acc85	97234996
+File	Hash
+Sample-161208-03_1M_OAv3.1_aligned.bam	584c2c4f947f734b	85232366
+Sample-161208-03_1M_OAv3.1_aligned.sorted.bam	584c2c4f947f734b	85232366
+File	Hash
+Sample-161208-04_1M_OAv3.1_aligned.bam	f9d9e282bf2c2dcb	79504336
+Sample-161208-04_1M_OAv3.1_aligned.sorted.bam	f9d9e282bf2c2dcb	79504336
+File	Hash
+Sample-161208-05_3M_OAv3.1_aligned.bam	f88fdf71fb2f4490	84033116
+Sample-161208-05_3M_OAv3.1_aligned.sorted.bam	f88fdf71fb2f4490	84033116
+File	Hash
+Sample-161208-06_3M_OAv3.1_aligned.bam	90e631160f69831b	76429992
+Sample-161208-06_3M_OAv3.1_aligned.sorted.bam	90e631160f69831b	76429992
+File	Hash
+Sample-161206-02_1W_OAv3.1_aligned.bam	1141b522b2f75b3f	92023248
+Sample-161206-02_1W_OAv3.1_aligned.sorted.bam	1141b522b2f75b3f	92023248
+File	Hash
+Sample-161208-08_AD_OAv3.1_aligned.bam	4d94b1ff925ceb60	91572016
+Sample-161208-08_AD_OAv3.1_aligned.sorted.bam	4d94b1ff925ceb60	91572016
+File	Hash
+Sample-161209-02_1M_OAv3.1_aligned.bam	e96945da9d55fbd5	77943478
+Sample-161209-02_1M_OAv3.1_aligned.sorted.bam	e96945da9d55fbd5	77943478
+File	Hash
+Sample-161209-03_1M_OAv3.1_aligned.bam	3b9e3b7b37837e14	86517218
+Sample-161209-03_1M_OAv3.1_aligned.sorted.bam	3b9e3b7b37837e14	86517218
+File	Hash
+Sample-161209-04_3M_OAv3.1_aligned.bam	eefd0f2a4d54910f	93855050
+Sample-161209-04_3M_OAv3.1_aligned.sorted.bam	eefd0f2a4d54910f	93855050
+File	Hash
+Sample-161212-01_1W_OAv3.1_aligned.bam	36b58f51dbf7d472	86306356
+Sample-161212-01_1W_OAv3.1_aligned.sorted.bam	36b58f51dbf7d472	86306356
+File	Hash
+Sample-161212-02_1M_OAv3.1_aligned.bam	2cc558c6adb384cb	91265870
+Sample-161212-02_1M_OAv3.1_aligned.sorted.bam	2cc558c6adb384cb	91265870
+File	Hash
+Sample-170110-05_AD_OAv3.1_aligned.bam	28639bf5c6666fdf	90069488
+Sample-170110-05_AD_OAv3.1_aligned.sorted.bam	28639bf5c6666fdf	90069488
+File	Hash
+Sample-170124-02_1M_OAv3.1_aligned.bam	926c3ee2ced676f1	84414662
+Sample-170124-02_1M_OAv3.1_aligned.sorted.bam	926c3ee2ced676f1	84414662
+File	Hash
+Sample-170124-04_1M_OAv3.1_aligned.bam	24db0bc2baf08234	89305588
+Sample-170124-04_1M_OAv3.1_aligned.sorted.bam	24db0bc2baf08234	89305588
+File	Hash
+Sample-170124-07_AD_OAv3.1_aligned.bam	a45c21f27a82e739	85966252
+Sample-170124-07_AD_OAv3.1_aligned.sorted.bam	a45c21f27a82e739	85966252
+File	Hash
+Sample-161206-06_3M_OAv3.1_aligned.bam	f4550c4e3866810e	70775582
+Sample-161206-06_3M_OAv3.1_aligned.sorted.bam	f4550c4e3866810e	70775582
+File	Hash
+Sample-170221-01_AD_OAv3.1_aligned.bam	26762285552b69cd	98749154
+Sample-170221-01_AD_OAv3.1_aligned.sorted.bam	26762285552b69cd	98749154
+File	Hash
+Sample-161206-07_3M_OAv3.1_aligned.bam	324b6b9c11853ec9	108735976
+Sample-161206-07_3M_OAv3.1_aligned.sorted.bam	324b6b9c11853ec9	108735976
+File	Hash
+Sample-161206-08_AD_OAv3.1_aligned.bam	18e33ddabcfb6af1	81600130
+Sample-161206-08_AD_OAv3.1_aligned.sorted.bam	18e33ddabcfb6af1	81600130
+File	Hash
+Sample-161207-01_1W_OAv3.1_aligned.bam	6c12a35ec1bcd095	91220862
+Sample-161207-01_1W_OAv3.1_aligned.sorted.bam	6c12a35ec1bcd095	91220862
+File	Hash
+Sample-161207-02_1W_OAv3.1_aligned.bam	49798c17adc381	82469048
+Sample-161207-02_1W_OAv3.1_aligned.sorted.bam	49798c17adc381	82469048
+File	Hash
+Sample-161207-05_3M_OAv3.1_aligned.bam	10968a19c134cd41	83713912
+Sample-161207-05_3M_OAv3.1_aligned.sorted.bam	10968a19c134cd41	83713912
+File	Hash
+Sample-161207-06_AD_OAv3.1_aligned.bam	6d3c6e62bb6886f	90753526
+Sample-161207-06_AD_OAv3.1_aligned.sorted.bam	6d3c6e62bb6886f	90753526
+File	Hash
+Sample-161206-01_1W_OAv3.1_aligned.bam	947c4362697377b6	98717778
+Sample-161206-01_1W_OAv3.1_aligned.sorted.bam	947c4362697377b6	98717778

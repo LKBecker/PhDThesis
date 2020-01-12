@@ -1,0 +1,30 @@
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\bin\Debug\FastQCRipper.exe.config
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\bin\Debug\FastQCRipper.exe
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\bin\Debug\FastQCRipper.pdb
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.csprojResolveAssemblyReference.cache
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\MainWindow.g.cs
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\App.g.cs
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper_MarkupCompile.cache
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper_MarkupCompile.lref
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\MainWindow.baml
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.g.resources
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.Properties.Resources.resources
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.csproj.GenerateResource.Cache
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.csproj.CoreCompileInputs.cache
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.exe
+D:\Users\User\Projects\FastQCRipper\FastQCRipper\obj\Debug\FastQCRipper.pdb
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\bin\Debug\FastQCRipper.exe.config
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\bin\Debug\FastQCRipper.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\bin\Debug\FastQCRipper.pdb
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.csprojResolveAssemblyReference.cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\MainWindow.g.cs
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\App.g.cs
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper_MarkupCompile.cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper_MarkupCompile.lref
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\MainWindow.baml
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.g.resources
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.Properties.Resources.resources
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.csproj.GenerateResource.Cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.csproj.CoreCompileInputs.cache
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.exe
+D:\Users\User\Documents\Actual Documents\University of Manchester\PhD\Code\C#\FastQCRipper\obj\Debug\FastQCRipper.pdb

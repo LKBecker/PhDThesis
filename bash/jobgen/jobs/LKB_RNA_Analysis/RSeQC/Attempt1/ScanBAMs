@@ -1,0 +1,6 @@
+module load apps/htseq/0.6.1p1/gcc-4.8.5+python-2.7.8+numpy-1.9.2
+cd ~/scratch/LKB
+
+INFILE=$(awk 'NR=='"$SGE_JOB_ID"' {print $1} END {print ""}' OAv3.1BAMs-v4.txt)
+PyResult=$(python ~/gridware/share/bin/python/2.7.8/bin/infer_experiment.py -i $INFILE.bam -r ~/rds-dibbs-sparks/RefGenomes/OvisAries/OAv3.1/EalesPruned.bed)
+printf "FILE:\t%s\n%s\n\n", $INFILE, $PyResult >> BAMStrandInfer.txt

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54d43597-fbca-4168-abb1-56068b4a50bc}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>ENSEMBL_API.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="2017-08-17_13-34-38 EMSEMBL VEP output.txt" />
+    <Content Include="2017-10-03_11-56-19 EMSEMBL MAF retrieval.txt" />
+    <Content Include="2017-10-03_12-24-46 EMSEMBL MAF retrieval.txt" />
+    <Content Include="2017-10-13_14-01-57 EMSEMBL Batch Remap output.txt" />
+    <Content Include="2018-01-03_11-40-55 EMSEMBL upstream sequence retrieval errors.txt" />
+    <Content Include="2018-01-03_11-40-55 EMSEMBL upstream sequence retrieval.txt" />
+    <Content Include="2018-01-11_16-36-02 EMSEMBL Human Homolog.txt" />
+    <Content Include="2018-10-23_16-54-42 EMSEMBL Human Homolog.txt" />
+    <Content Include="2018-10-23_16-55-32 EMSEMBL Human Homolog.txt" />
+    <Content Include="2018-11-14_20-34-20 EMSEMBL Batch Feature contextualisation output.txt" />
+    <Content Include="haploregT2.txt" />
+    <Content Include="input characterise.txt" />
+    <Content Include="input feature search.txt" />
+    <Content Include="input Get MAF.txt" />
+    <Content Include="input get sequence.txt" />
+    <Content Include="input get Upstream 5k.txt" />
+    <Content Include="input human homolog.txt" />
+    <Content Include="input remap.txt" />
+    <Content Include="input rsquared retrieval.txt" />
+    <Content Include="input SNP.txt" />
+    <Content Include="r2matrix.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ENSEMBL_API.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

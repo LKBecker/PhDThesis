@@ -1,0 +1,7 @@
+#$ -S /bin/bash
+#$ -cwd
+#$ -V
+#$ -N HS_Build_JE-OA-Trnscrptm
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m n
+~/PhD/tools/hisat/hisat2-build -f ~/PhD/RefGenomes/OvisAries/OvisAriesTranscriptome.fasta OvsArs-Eales-Trnscrptme

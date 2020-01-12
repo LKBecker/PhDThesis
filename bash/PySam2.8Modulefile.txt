@@ -1,0 +1,46 @@
+#%Module1.0#####################################################################
+##
+## Alces Clusterware - Library module file
+## Copyright (c) 2008-2015 Alces Software Ltd
+##
+## path: libs/pysam/0.8.3/gcc-4.8.5+python-2.7.8
+################################################################################
+if { [info exists ::env(ALCES_TRACE)] } {
+    puts stderr " -> $::ModulesCurrentModulefile"
+}
+
+if { [namespace exists alces] == 0 } {
+    if { [info exists ::env(MODULES_ALCES_TCL)] } {
+        source $::env(MODULES_ALCES_TCL)
+    } else {
+        # compatibility mode for module use without availability of Alces tools
+        proc ::process {body} { eval $body }
+        proc ::depend {module {version ""} {_ ""}} {
+            set req [regsub {\-} $module {/}]/$version
+            if { [catch { prereq $req }] } {
+                puts stderr "Could not satisfy prereq: $req"
+                break
+            }
+        }
+        proc ::alces {_ module} { return $module }
+        proc ::search {_ _ _} { }
+    }
+}
+
+set     app      pysam
+set     version  0.8.3
+set     appcaps  PYSAM
+set     appdir   /opt/gridware/depots/4baff5c5/el7/pkg/libs/pysam/0.8.3/gcc-4.8.5+python-2.7.8
+
+if { [ namespace exists alces ] } { set dependencies "     Dependencies: [alces pretty libs/gcc/system] (using: [alces pretty [search libs-gcc 4.8.5 0f6c756b]])
+                   [alces pretty apps/python/2.7.8/gcc-4.8.5] (using: [alces pretty [search apps-python 2.7.8 b5d2fa70]])" } { set dependencies "" }
+
+process {
+depend libs-gcc 4.8.5 0f6c756b
+depend apps-python 2.7.8 b5d2fa70
+conflict libs/pysam
+}
+
+setenv ${appcaps}DIR ${appdir}
+
+prepend-path PYTHONPATH ${appdir}/python/lib/python2.7/site-packages

@@ -1,0 +1,35 @@
+#%Module1.0####################################################
+##
+## python37 Modulefile
+##
+
+if { [info exists ::env(ALCES_TRACE)] } {
+    puts stderr " -> $::ModulesCurrentModulefile"
+}
+
+if { [namespace exists alces] == 0 } {
+    if { [info exists ::env(MODULES_ALCES_TCL)] } {
+        source $::env(MODULES_ALCES_TCL)
+    } else {
+        # compatibility mode for module use without availability of Alces tools
+        proc ::process {body} { eval $body }
+        proc ::depend {module {version ""} {_ ""}} {
+            set req [regsub {\-} $module {/}]/$version
+            if { [catch { prereq $req }] } {
+                puts stderr "Could not satisfy prereq: $req"
+                break
+            }
+        }
+        proc ::alces {_ module} { return $module }
+        proc ::search {_ _ _} { }
+    }
+}
+
+set     app      python37
+set     version  3.7.0
+set     appcaps  PYTHON37
+set     appdir   /mnt/iusers01/bk01-icvs/mqbprlb2/PhD/tools/Python37/Python-3.7.0
+
+#setenv ${appcaps}DIR ${appdir}
+
+prepend-path PYTHONPATH ${appdir}/build/lib.linux-x86_64-3.7

@@ -1,0 +1,24 @@
+﻿<Window x:Class="FastQCRipper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastQCRipper"
+        mc:Ignorable="d"
+        Title="Fast QC Ripper" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip" HorizontalAlignment="Center" VerticalAlignment="Center" >
+	<Grid x:Name="MainGrid" Width="521" Height="105" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top">
+		<Button x:Name="ButtonSelectSourceDirectory" Content="Select..." HorizontalAlignment="Left" Margin="436,9,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSelectSourceDirectory_Click"/>
+		<TextBox x:Name="TextBoxSourceDirectory" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="(No directory selected)" VerticalAlignment="Top" Width="400" AutomationProperties.Name="TextBox.SourceDirectory" AutomationProperties.IsRowHeader="True" IsReadOnly="True" MaxLines="1" MinLines="1" Foreground="Black"/>
+		<Button x:Name="ButtonSelectDestinationDirectory" Content="Select..." HorizontalAlignment="Left" Margin="436,37,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSelectDestinationDirectory_Click"/>
+		<TextBox x:Name="TextBoxDestinationDirectory" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="(No directory selected)" VerticalAlignment="Top" Width="400" MaxLines="1" IsReadOnly="True" Foreground="Black"/>
+		<Button x:Name="ButtomCompute" Content="Extract" HorizontalAlignment="Left" Margin="436,75,0,0" VerticalAlignment="Top" Width="75" Click="ButtomCompute_Click"/>
+		<ProgressBar x:Name="ProgressBarZIPRip" HorizontalAlignment="Center" Height="19" Margin="0" Width="400" VerticalAlignment="Center" Visibility="Hidden"/>
+		<Label x:Name="LabelProgress" Content="Processing File X of Y (ZZZ%) ..." HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+		<Expander Header="Options" Height="61" Margin="10,75,111,-31" VerticalAlignment="Bottom" IsExpanded="False">
+			<StackPanel HorizontalAlignment="Left" Height="51" Margin="10,0,0,0" Width="380" Orientation="Horizontal">
+				<Label Content="File search pattern" Height="23" Margin="0" Width="110" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="240" Margin="10,14,0,14"/>
+			</StackPanel>
+		</Expander>
+	</Grid>
+</Window>

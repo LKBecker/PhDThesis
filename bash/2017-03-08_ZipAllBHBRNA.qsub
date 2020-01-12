@@ -1,0 +1,7 @@
+#!/bin/bash
+#$ -S /bin/bash
+#$ -cwd             # Job will run from the current directory
+#$ -V               # Job will inherit current environment settings
+#$ -pe smp.pe 4     # 4 is the maximum number of cores that decompression can use
+#$ -N ZipAllAlignedBHBRNA
+tar cf - * | pigz -p $NSLOTS > All_BHBRNA_Aligned_OA.tar.gz

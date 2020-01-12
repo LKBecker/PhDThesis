@@ -1,0 +1,6 @@
+The following attributes do NOT work as -i switch when using the NCBI Ovis Aries v4.0 GFF (-NOT- GTF) file:
+	gene
+	Dbxref
+	transcript_id
+	
+...just get a GTF.

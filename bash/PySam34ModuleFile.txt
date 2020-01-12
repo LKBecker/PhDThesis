@@ -1,0 +1,38 @@
+#%Module1.0####################################################
+##
+## pysam34 Modulefile
+##    -- Replace APP with the name of your app
+##
+
+if { [info exists ::env(ALCES_TRACE)] } {
+    puts stderr " -> $::ModulesCurrentModulefile"
+}
+
+if { [namespace exists alces] == 0 } {
+    if { [info exists ::env(MODULES_ALCES_TCL)] } {
+        source $::env(MODULES_ALCES_TCL)
+    } else {
+        # compatibility mode for module use without availability of Alces tools
+        proc ::process {body} { eval $body }
+        proc ::depend {module {version ""} {_ ""}} {
+            set req [regsub {\-} $module {/}]/$version
+            if { [catch { prereq $req }] } {
+                puts stderr "Could not satisfy prereq: $req"
+                break
+            }
+        }
+        proc ::alces {_ module} { return $module }
+        proc ::search {_ _ _} { }
+    }
+}
+
+module load apps/cython_python34/0.23.4/gcc-4.8.5+python3-3.4.3
+
+set     app      pysam
+set     version  0.15.1
+set     appcaps  PYSAM
+set     appdir   /mnt/iusers01/bk01-icvs/mqbprlb2/PhD/tools/pysam/pysam-0.15.1
+
+#setenv ${appcaps}DIR ${appdir}
+
+prepend-path PYTHONPATH ${appdir}/build/lib.linux-x86_64-3.4/pysam

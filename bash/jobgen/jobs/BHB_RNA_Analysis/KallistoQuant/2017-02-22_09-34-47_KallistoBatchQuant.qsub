@@ -1,0 +1,12 @@
+#$ -pe smp.pe 6
+#$ -S /bin/bash
+#$ -V
+#$ -l 's_rt=00:45:00'
+#$ -N KallistoQuantBHBforScotty
+#$ -M lorenz.becker@postgrad.manchester.ac.uk
+#$ -m bae
+#$ -t 1-10
+INFILE=`awk NR==${SGE_TASK_ID} ORS='' /mnt/iusers01/bk01-icvs/mqbprlb2/PhD/tools/jobgen/jobs/2017-02-22_KallistoQuantTargets.txt`
+FOLDER=/mnt/iusers01/bk01-icvs/mqbprlb2/PhD/BHB_RNA/BatchQuant-$SGE_TASK_ID
+mkdir $FOLDER
+/mnt/iusers01/bk01-icvs/mqbprlb2/PhD/tools/Kallisto/kallisto quant --index="/mnt/iusers01/bk01-icvs/mqbprlb2/PhD/tools/Kallisto/OvisAries.idx" -t 6 /mnt/iusers01/bk01-icvs/mqbprlb2/PhD/BHB_RNA/170124_K00198_0157_BHHFKJBBXX/${INFILE}_1.fastq.gz /mnt/iusers01/bk01-icvs/mqbprlb2/PhD/BHB_RNA/170124_K00198_0157_BHHFKJBBXX/${INFILE}_2.fastq.gz -o $FOLDER
