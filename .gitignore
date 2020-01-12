@@ -29,8 +29,6 @@ rsconnect/
 # R binary object files (tend to be big chunky boys)
 *.rds
 .Rproj.user
-/*.txt
-/*.tsv
 *.RData
 *.bed
 *.docx
@@ -70,7 +68,7 @@ R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/.vs/leafcutter_clustering/v15/Serv
 R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/dotnet190130.vsp
 R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130.vsp
 R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130(1).vsp
-R/LKB_PhD_ReCode/Data/*
+R/LKB_PhD_ReCode/Data/
 *.ris
 *.gmt
 *.nbib
