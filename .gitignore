@@ -40,10 +40,10 @@ rsconnect/
 *.png
 *.e*
 *.o*
-C#/DICAMExportFolderizer/
-C#/DICOMExporter/
-C#/SeriesFolderizer/
-C#/SigmaPlotRipper/
+C#/DICAMExportFolderizer
+C#/DICOMExporter
+C#/SeriesFolderizer
+C#/SigmaPlotRipper
 Java/
 Perl/
 VBA/
