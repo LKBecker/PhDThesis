@@ -46,6 +46,7 @@ rsconnect/
 /C#/SigmaPlotRipper/
 /Java/
 /Perl/
+/VBA/
 /Python/input Miriam - Copy.txt
 /Python/input Miriam.txt
 /R/GWPM_HF_Paper
@@ -70,3 +71,5 @@ rsconnect/
 /R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130.vsp
 /R/LKB_PhD_ReCode/Code/Desktop/leafcutter_Hack/leafcutter_cluster190130(1).vsp
 /R/LKB_PhD_ReCode/Data/*
+*.ris
+*.gmt
