@@ -75,4 +75,5 @@ R/LKB_PhD_ReCode/Data/*
 *.gmt
 *.nbib
 Python/*.txt
+Python/ENSEMBL/*.txt
 bash/*.txt
