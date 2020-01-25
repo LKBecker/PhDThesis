@@ -79,26 +79,28 @@ Fig6.5
 #CYTOSOLIC_BUFFERS
 Myosins = GenerateGeneSummaryPlots(Dictionary[grepl("^myosin", `Gene description`) & grepl("^MY", `Gene name`), `Gene stable ID`])$PlotData
 Myosins = Myosins[,mean(TPM), .(geneID, group)]
-#Fig5A = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>1000, geneID], Dataset="LKB.ERCC", Model="Spline")$PlotSignif 
 Fig6.8A = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>250, geneID], Dataset="LKB.ERCC", Model="Spline")$PlotSignif 
+Fig6.9A = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>1000, geneID], Dataset="GWPM", Model="CvHF")$PlotSignif 
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
 Troponins = GenerateGeneSummaryPlots(Dictionary[grepl("^troponin", `Gene description`), `Gene stable ID`])$PlotData
 Troponins = Troponins[,mean(TPM), .(geneID, group)]
-#Fig5B = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>400, geneID])$Plot+scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
 Fig6.8B = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>400, geneID], Dataset="LKB.ERCC", Model="Spline")$Plot+
     scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
-
+Fig6.9B = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>50, geneID], Dataset="GWPM", Model="CvHF")$Plot+
+    scale_y_continuous(expand = expand_scale(mult = c(0, .09))) 
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
 SERCA = GenerateGeneSummaryPlots(Dictionary[grepl("^ATP\\dA\\d", `Gene name`), `Gene stable ID`])$PlotData
 SERCA = SERCA[,mean(TPM), .(geneID, group)]
 Fig6.8C = GenerateGeneSummaryPlots(SERCA[,sum(V1), geneID][V1>400, geneID], Dataset="LKB.ERCC", Model="Spline")$Plot+
     scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
+Fig6.9C = GenerateGeneSummaryPlots(SERCA[,sum(V1), geneID][V1>400, geneID], Dataset="GWPM", Model="CvHF")$Plot+
+    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
-Sarcalumenin = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset = "LKB.ERCC", Model = "Spline")$Plot
-#Sarcalumeninv2 = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset="GWPM", Model="CvHF")$Plot+scale_y_continuous(expand = expand_scale(mult = c(0, .1)))
+Fig6.8D = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset = "LKB.ERCC", Model = "Spline")$Plot
+Fig6.9D = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset = "GWPM",     Model = "CvHF")$Plot+scale_y_continuous(expand = expand_scale(mult = c(0, .1)))
 
 #SR Lumen, List from Dr. Katharine Dibb:
 CA_BUFFER_GENES = c("SRL", "HRC", "CALU", "CALR", "HSPA5", "CANX", "ASPH", "RCN1", "SDF4", "RCN2", "RCN3", "CASQ1", "CASQ2")
