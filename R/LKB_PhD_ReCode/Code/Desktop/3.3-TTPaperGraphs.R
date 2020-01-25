@@ -44,7 +44,7 @@ Fig4.1A = ggplot(CharlotteTTData2, aes(x=Age, y=meanFA, color=Age))+geom_boxplot
 
 #This suggess genes involved in the support, maintenance or assembly of t-tubules should likewise increase.
 #We know several t-tubules involved in formation, e.g. BIN1, JPH2, CAV3
-Fig4.1B = GenerateGeneSummaryPlots(c("BIN1"="ENSOARG00000016188", "DYSF"="ENSOARG00000011500", "CAV3"="ENSOARG00000007515"), Dataset="ERCC+GWPM", Model = "CvHF")$Plot
+Fig4.1B = GenerateGeneSummaryPlots(c("BIN1"="ENSOARG00000016188", "DYSF"="ENSOARG00000011500", "CAV3"="ENSOARG00000007515"), Dataset="ERCC+GWPM", Model = "1WAD+CvHF")$Plot
 Fig4.1B+scale_y_continuous(expand = expand_scale(mult = c(0, .1))) 
 
 # Fig4.1BData = GenerateGeneSummaryPlots(c("DYSF"="ENSOARG00000011500"), Model = "1WAD")$PlotData
@@ -262,7 +262,6 @@ Fig4.9 #550 x 700
 Fig4.10A = GenerateGeneSummaryPlots(Dictionary[grepl("^EHD", `Gene name`), `Gene stable ID`], Dataset = "ERCC+GWPM", Model = "1WAD+CvHF")$Plot+
     facet_wrap(~geneName, ncol = 2, scales="free_y")+scale_y_continuous(expand = expand_scale(mult = c(0, .15)))
 
-Fig4.10B = GenerateGeneSummaryPlots(c("MG53"="ENSOARG00000008958", "Dysferlin"="ENSOARG00000011500"), Dataset = "ERCC+GWPM", Model = "1WAD+CvHF")$Plot+
     scale_y_continuous(expand = expand_scale(mult = c(0, .15)))
 
 Fig4.11 = GenerateGeneSummaryPlots(Dictionary[grepl("^annexin", `Gene description`), `Gene stable ID`], Dataset = "ERCC+GWPM", Model = "1WAD+CvHF")$Plot+

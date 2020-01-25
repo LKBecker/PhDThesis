@@ -80,26 +80,24 @@ Fig6.5
 Myosins = GenerateGeneSummaryPlots(Dictionary[grepl("^myosin", `Gene description`) & grepl("^MY", `Gene name`), `Gene stable ID`])$PlotData
 Myosins = Myosins[,mean(TPM), .(geneID, group)]
 #Fig5A = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>1000, geneID], Dataset="LKB.ERCC", Model="Spline")$PlotSignif 
-#Fig5Av2 = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>1000, geneID], Dataset="GWPM", Model="CvHF")$PlotSignif 
+Fig6.8A = GenerateGeneSummaryPlots(Myosins[,sum(V1), geneID][V1>250, geneID], Dataset="LKB.ERCC", Model="Spline")$PlotSignif 
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
 Troponins = GenerateGeneSummaryPlots(Dictionary[grepl("^troponin", `Gene description`), `Gene stable ID`])$PlotData
 Troponins = Troponins[,mean(TPM), .(geneID, group)]
 #Fig5B = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>400, geneID])$Plot+scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
-#Fig5Bv2 = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>400, geneID], Dataset="GWPM", Model="CvHF")$Plot+
-#    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
+Fig6.8B = GenerateGeneSummaryPlots(Troponins[,sum(V1), geneID][V1>400, geneID], Dataset="LKB.ERCC", Model="Spline")$Plot+
+    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
 
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
 SERCA = GenerateGeneSummaryPlots(Dictionary[grepl("^ATP\\dA\\d", `Gene name`), `Gene stable ID`])$PlotData
 SERCA = SERCA[,mean(TPM), .(geneID, group)]
-#Fig5C = GenerateGeneSummaryPlots(SERCA[,sum(V1), geneID][V1>400, geneID])$Plot+
-#    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
-#Fig5Cv2 = GenerateGeneSummaryPlots(SERCA[,sum(V1), geneID][V1>400, geneID], Dataset="GWPM", Model="CvHF")$Plot+
-#    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
+Fig6.8C = GenerateGeneSummaryPlots(SERCA[,sum(V1), geneID][V1>400, geneID], Dataset="LKB.ERCC", Model="Spline")$Plot+
+    scale_y_continuous(expand = expand_scale(mult = c(0, .09)))
 #"Myosin genes with a total average count of at least 200, significant changes only"
 
-#Sarcalumenin = GenerateGeneSummaryPlots("ENSOARG00000003074")$Plot
+Sarcalumenin = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset = "LKB.ERCC", Model = "Spline")$Plot
 #Sarcalumeninv2 = GenerateGeneSummaryPlots("ENSOARG00000003074", Dataset="GWPM", Model="CvHF")$Plot+scale_y_continuous(expand = expand_scale(mult = c(0, .1)))
 
 #SR Lumen, List from Dr. Katharine Dibb:
